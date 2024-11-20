@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async'; // Para usar o Timer
 
 void main() {
   runApp(const MyApp());
@@ -55,8 +56,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _counter = 0; // Contador de cliques
+  bool _isPlaying = false; // Indica se o teste está ativo
+  int _timeLeft = 10; // Tempo restante em segundos
+  Timer? _timer; // Referência ao Timer
 
+  void _startGame() {
+    setState(() {
+      _counter = 0; // Reseta o contador
+      _timeLeft = 10; // Define o tempo inicial
+      _isPlaying = true; // Inicia o jogo
+    });
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
