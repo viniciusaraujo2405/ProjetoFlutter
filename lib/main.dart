@@ -67,6 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
       _timeLeft = 10; // Define o tempo inicial
       _isPlaying = true; // Inicia o jogo
     });
+
+  _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        _timeLeft--;
+      });
+  
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
