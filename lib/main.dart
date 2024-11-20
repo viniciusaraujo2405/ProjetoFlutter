@@ -77,6 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     });
   }
+
+  void _endGame() {
+    setState(() {
+      _isPlaying = false; // Finaliza o jogo
+    });
+    _timer?.cancel(); // Para o Timer
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
