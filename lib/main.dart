@@ -72,7 +72,11 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _timeLeft--;
       });
-  
+      if (_timeLeft <= 0) {
+        _endGame();
+      }
+    });
+  }
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
